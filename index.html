@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="/images/logo.ico">
-		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	
 	
 	<body class="is-preload">
 
@@ -277,11 +277,12 @@
 	<!--  SHOPROCKET  ECOMMERCE  -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
 	<script type="text/javascript">
 		
  
-
 		function enviarEmail(){ 
+
 			$.ajax({
 				url:'https://drolg.000webhostapp.com/enviar.php',
 				data: {
@@ -291,6 +292,7 @@
 				},
 				method: 'POST'
 			}).then(function(response){
+
 
 			swal("Gracias!", "Tu información se envió correctamente!", "success");
                      $('#nombre').val("");
