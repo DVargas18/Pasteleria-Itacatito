@@ -17,6 +17,6 @@ $carta .= "Mensaje: $mensaje";
 //echo $nombre;
 // Enviando Mensaje
 mail($destinatario, $asunto, $carta);
- 
+echo $nombre;
 //echo('<script language="JavaScript>alert("Tu información se envio con exito");</script>');
 ?>
