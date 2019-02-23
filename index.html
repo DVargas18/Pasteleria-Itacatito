@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="/images/logo.ico">
-	</head>
+		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
 	
 	<body class="is-preload">
 
@@ -216,12 +216,12 @@
 					<div class="box">
 						<form method="post" action="#">
 							<div class="fields">
-								<div class="field half"><input type="text" id="nombre" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" id="correo" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea id="mensaje" name="message" placeholder="Message" rows="6"></textarea></div>
+								<div class="field half"><input type="text" id="nombre" name="nombre" placeholder="Name" /></div>
+								<div class="field half"><input type="email" id="correo" name="correo" placeholder="Email" /></div>
+								<div class="field"><textarea id="mensaje" name="message" placeholder="mensaje" rows="6"></textarea></div>
 							</div>
 							<ul class="actions special">
-								<li><button type="button" onClick="enviarEmail()" value="Enviar Mensaje" id="btnSend"> Enviar </button></li>
+								<li><button type="button" onClick="enviarEmail2()" value="Enviar Mensaje" id="btnSend"> Enviar </button></li>
 							</ul>
 						</form>
 					</div>
@@ -279,30 +279,32 @@
 		var JSR = jQuery.noConflict();
 		var $ = jQuery.noConflict();
 	</script>		
-	
-	
 	<script type="text/javascript">
-		
-		function enviarEmail(){ 
+
+
+
+		function enviarEmail2() {
 			$.ajax({
-				url:'enviar.php',
+				url: 'http://drolg.000webhostapp.com/utilidades/enviar.php',
 				data: {
 					nombre: $('input#nombre').val(),
 					correo: $('input#correo').val(),
 					mensaje: $('textarea#mensaje').val()
 				},
 				method: 'POST'
-			}).then(function(response){
 
-			swal("Gracias!", "Tu información se envió correctamente!", "success");
-                     $('#nombre').val("");
-					$('#correo').val("");
-					$('#mensaje').val("");
+			}).then(function (response) {
+				swal("Gracias!", "Tu información se envió correctamente!", "success");
+
+				$('#nombre').val("");
+				$('#correo').val("");
+				$('#mensaje').val("");
 				//debugger;
 
 			})
 		}
- 
+
+	</script>
 	</script>
 	</body>
 	
